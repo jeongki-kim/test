@@ -16,7 +16,7 @@ jobs:
         run: |
           echo asdf > artifact.txt
       - name: Create Release
-        uses: ncipollo/release-action@v1.10.0
+        uses: ncipollo/release-action@v1.9.0
         with:
           name: release
           body: |
