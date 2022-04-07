@@ -3,7 +3,7 @@ name: release
 on:
   workflow_dispatch:
     inputs:
-      tags:
+      tag:
         description: 'tag'
         required: true
 
@@ -21,6 +21,6 @@ jobs:
           name: release
           body: |
             asdf
-          tag: ${{ github.event.inputs.name }}
+          tag: ${{ github.event.inputs.tag }}
           commit: ${{ github.sha }}
           artifacts: artifact.txt
