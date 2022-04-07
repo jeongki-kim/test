@@ -1,0 +1,25 @@
+name: release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'tag'
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate Artifact
+        run: |
+          echo asdf > artifact.txt
+      - name: Create Release
+        uses: ncipollo/release-action@v1.10.0
+        with:
+          name: release
+          body: |
+            asdf
+          tag: ${{ github.event.inputs.name }}
+          artifacts: artifact.txt
