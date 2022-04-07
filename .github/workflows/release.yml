@@ -22,4 +22,5 @@ jobs:
           body: |
             asdf
           tag: ${{ github.event.inputs.name }}
+          commit: ${{ github.sha }}
           artifacts: artifact.txt
